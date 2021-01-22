@@ -1,11 +1,13 @@
 package com.jacobarchambault.fileencryption;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
 public class Program {
 
-	public static void main(String[] args) {
+	public static void main(
+			String[] args) {
+		new CaesarCipher().encrypt(
+				new GuardedPrintMedium(
+						new SourceFile(
+								"MyLetters.txt")).allText());
+
 	}
 }
