@@ -1,9 +1,11 @@
 package com.jacobarchambault.fileencryption;
 
+import java.util.Scanner;
+
 public class CaesarCipher {
 
-	String cipher(String message,
-			int offset) {
+	String cipher(String message) {
+		int offset = getUserInput();
 		System.out.println("Encrypting file...");
 		StringBuilder builder = new StringBuilder();
 		for (char character : message.toCharArray()) {
@@ -26,5 +28,12 @@ public class CaesarCipher {
 			char character) {
 		return (char) ('A' + ((character - 'A' + offset) % 26));
 	};
+	static int getUserInput(){
+		System.out.print("Enter an integer for your Caesar Cipher and press enter: ");
+		Scanner scanner = new Scanner(System.in);
+		int cipher = scanner.nextInt();
+		scanner.close();
+		return cipher;		
+	}
 
 }
