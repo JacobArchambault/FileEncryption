@@ -2,7 +2,7 @@ package com.jacobarchambault.fileencryption;
 
 import java.util.Scanner;
 
-public class CaesarCipher {
+public class CaesarCipher implements Cipher {
 
 	private static boolean isNumber(String input) {
 		try {
@@ -37,7 +37,7 @@ public class CaesarCipher {
 		return (char) ('A' + ((character - 'A' + offset) % 26));
 	};
 
-	String encrypt(String message) {
+	public String encrypt(String message) {
 		int offset = cipherKey();
 		System.out.println("Encrypting file...");
 		StringBuilder builder = new StringBuilder();
