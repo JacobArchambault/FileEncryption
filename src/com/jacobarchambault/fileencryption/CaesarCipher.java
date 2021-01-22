@@ -7,7 +7,12 @@ public class CaesarCipher {
 		StringBuilder builder = new StringBuilder();
 		for (char character : message.toCharArray()) {
 		    if (character != ' ') {
-		        char newCharacter = (char) ('a' + ((character - 'a' + offset) % 26));
+		    	char newCharacter;
+		    	if (Character.isUpperCase(character)) {
+			        newCharacter = (char) ('A' + ((character - 'A' + offset) % 26));
+		    	} else {
+			        newCharacter = (char) ('a' + ((character - 'a' + offset) % 26));		    		
+		    	}
 		        builder.append(newCharacter);
 		    } else {
 		        builder.append(character);
