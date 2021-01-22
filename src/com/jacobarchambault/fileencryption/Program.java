@@ -4,7 +4,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(new CaesarCipher().cipher("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 3));
+		System.out.println(new CaesarCipher().cipher("1234567890", 3));
 	}
 
 }
