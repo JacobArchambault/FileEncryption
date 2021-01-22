@@ -9,9 +9,11 @@ public class CaesarCipher {
 		    if (character != ' ') {
 		    	char newCharacter;
 		    	if (Character.isUpperCase(character)) {
-			        newCharacter = (char) ('A' + ((character - 'A' + offset) % 26));
+			        newCharacter = upperCaseCipher(offset,
+							character);
 		    	} else {
-			        newCharacter = (char) ('a' + ((character - 'a' + offset) % 26));		    		
+			        newCharacter = lowerCaseCipher(offset,
+							character);		    		
 		    	}
 		        builder.append(newCharacter);
 		    } else {
@@ -20,6 +22,16 @@ public class CaesarCipher {
 		}
 		return builder.toString();
 		
+	}
+
+	private char lowerCaseCipher(int offset,
+			char character) {
+		return (char) ('a' + ((character - 'a' + offset) % 26));
+	}
+
+	private char upperCaseCipher(int offset,
+			char character) {
+		return (char) ('A' + ((character - 'A' + offset) % 26));
 	};
 	
 }
