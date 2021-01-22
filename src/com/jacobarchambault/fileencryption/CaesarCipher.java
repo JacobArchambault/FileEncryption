@@ -3,16 +3,17 @@ package com.jacobarchambault.fileencryption;
 public class CaesarCipher {
 	String cipher(String message, int offset) {
 		
-		StringBuilder result = new StringBuilder();
+		
+		StringBuilder builder = new StringBuilder();
 		for (char character : message.toCharArray()) {
 		    if (character != ' ') {
 		        char newCharacter = (char) ('a' + ((character - 'a' + offset) % 26));
-		        result.append(newCharacter);
+		        builder.append(newCharacter);
 		    } else {
-		        result.append(character);
+		        builder.append(character);
 		    }
 		}
-		return result.toString();
+		return builder.toString();
 		
 	};
 	
