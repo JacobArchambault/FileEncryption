@@ -4,6 +4,7 @@ public class CaesarCipher {
 
 	String cipher(String message,
 			int offset) {
+		System.out.println("Encrypting file...");
 		StringBuilder builder = new StringBuilder();
 		for (char character : message.toCharArray()) {
 			char newCharacter = character == ' ' ? ' '
