@@ -7,21 +7,21 @@ public class CaesarCipher {
 		StringBuilder builder = new StringBuilder();
 		for (char character : message.toCharArray()) {
 			char newCharacter = character == ' ' ? ' '
-					: Character.isUpperCase(character) ? upperCaseCipher(offset,
+					: Character.isUpperCase(character) ? applyUpperCaseCipher(offset,
 							character)
-							: lowerCaseCipher(offset,
+							: applyLowerCaseCipher(offset,
 									character);
 			builder.append(newCharacter);
 		}
 		return builder.toString();
 	}
 
-	private char lowerCaseCipher(int offset,
+	private char applyLowerCaseCipher(int offset,
 			char character) {
 		return (char) ('a' + ((character - 'a' + offset) % 26));
 	}
 
-	private char upperCaseCipher(int offset,
+	private char applyUpperCaseCipher(int offset,
 			char character) {
 		return (char) ('A' + ((character - 'A' + offset) % 26));
 	};
