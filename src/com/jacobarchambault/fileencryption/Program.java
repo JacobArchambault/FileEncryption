@@ -1,7 +1,6 @@
 package com.jacobarchambault.fileencryption;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Program {
 
