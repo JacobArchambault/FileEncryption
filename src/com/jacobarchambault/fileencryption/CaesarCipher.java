@@ -37,7 +37,7 @@ public class CaesarCipher {
 		return (char) ('A' + ((character - 'A' + offset) % 26));
 	};
 
-	String cipher(String message) {
+	String encrypt(String message) {
 		int offset = cipherKey();
 		System.out.println("Encrypting file...");
 		StringBuilder builder = new StringBuilder();
