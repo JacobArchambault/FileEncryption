@@ -6,11 +6,15 @@ import java.nio.file.Paths;
 
 class MyFile {
 	String path;
-	MyFile(String filePath) {
+
+	MyFile(
+			String filePath) {
 		path = filePath;
 	}
-	String allText() throws IOException{
-	    return new String(Files.readAllBytes(Paths.get(path))); 
+
+	String allText() throws IOException {
+		return new String(
+				Files.readAllBytes(Paths.get(path)));
 	}
 
 }
