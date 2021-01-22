@@ -13,8 +13,8 @@ public class CaesarCipher {
 		}
 	}
 
-	private static int key() {
-		System.out.print("Enter an integer for your Caesar Cipher and press enter: ");
+	private static int cipherKey() {
+		System.out.print("Enter an integer offset for your Caesar Cipher and press enter: ");
 		Scanner scanner = new Scanner(
 				System.in);
 		String input = scanner.nextLine();
@@ -22,9 +22,9 @@ public class CaesarCipher {
 			System.out.println("Invalid input. Please enter a number");
 			input = scanner.nextLine();
 		}
-		int cipher = Integer.parseInt(input);
+		int cipherKey = Integer.parseInt(input);
 		scanner.close();
-		return cipher;
+		return cipherKey;
 	}
 
 	private char applyLowerCaseCipher(int offset,
@@ -38,7 +38,7 @@ public class CaesarCipher {
 	};
 
 	String cipher(String message) {
-		int offset = key();
+		int offset = cipherKey();
 		System.out.println("Encrypting file...");
 		StringBuilder builder = new StringBuilder();
 		for (char character : message.toCharArray()) {
