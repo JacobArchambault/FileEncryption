@@ -8,7 +8,7 @@ public class CaesarCipher {
 		System.out.print("Enter an integer for your Caesar Cipher and press enter: ");
 		Scanner scanner = new Scanner(
 				System.in);
-		int cipher = Integer.parseInt(scanner.nextLine());
+		int cipher = Integer.parseInt(scanner.next());
 		scanner.close();
 		return cipher;
 	}
