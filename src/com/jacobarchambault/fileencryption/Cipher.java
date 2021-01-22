@@ -1,5 +1,7 @@
 package com.jacobarchambault.fileencryption;
 
+import java.io.IOException;
+
 public interface Cipher {
-	String encrypt(String sourceText);
+	String encrypt() throws IOException;
 }

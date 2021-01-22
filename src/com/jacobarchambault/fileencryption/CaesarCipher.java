@@ -1,9 +1,14 @@
 package com.jacobarchambault.fileencryption;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class CaesarCipher implements Cipher {
 
+	PrintMedium medium;
+	CaesarCipher(PrintMedium sourceText){
+		medium = sourceText;
+	}
 	private static boolean isNumber(String input) {
 		try {
 			Integer.parseInt(input);
@@ -37,11 +42,12 @@ public class CaesarCipher implements Cipher {
 		return (char) ('A' + ((character - 'A' + offset) % 26));
 	};
 
-	public String encrypt(String message) {
+	public String encrypt() throws IOException {
 		int offset = cipherKey();
 		System.out.println("Encrypting file...");
 		StringBuilder builder = new StringBuilder();
-		for (char character : message.toCharArray()) {
+		char[] charArray = textAsCharArray();
+		for (char character : charArray) {
 			char newCharacter = character == ' ' ? ' '
 					: Character.isUpperCase(character) ? applyUpperCaseCipher(offset,
 							character)
@@ -50,5 +56,9 @@ public class CaesarCipher implements Cipher {
 			builder.append(newCharacter);
 		}
 		return builder.toString();
+	}
+	private char[] textAsCharArray() throws IOException {
+		char[] charArray = medium.allText().toCharArray();
+		return charArray;
 	}
 }
