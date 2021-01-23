@@ -15,9 +15,8 @@ public class SourceFile implements PrintMedium {
 
 	@Override
 	public String allText() throws IOException {
-		return new String(
-				Files.readAllBytes(
+		return Files.readString(
 						Paths.get(
-								filePath)));
+								filePath));
 	}
 }
