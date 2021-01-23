@@ -2,13 +2,13 @@ package com.jacobarchambault.fileencryption;
 
 import java.io.IOException;
 
-public class CaesarCipher implements Cipher {
+public class EncryptedText implements Cipher {
 
 	StringBuilder builder;
 	CipherKey cipherKey;
 	SourceText sourceText;
 
-	CaesarCipher(
+	EncryptedText(
 			SourceText sourceText,
 			CipherKey key,
 			StringBuilder builder) {

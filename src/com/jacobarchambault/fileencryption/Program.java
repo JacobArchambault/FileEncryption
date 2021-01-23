@@ -13,7 +13,7 @@ public class Program {
 				new MyFileWriter(
 						new FileWriter(
 								"Encrypted.txt"),
-						new CaesarCipher(
+						new EncryptedText(
 								new SourceText(
 										new GuardedPrintMedium(
 												new SourceFile(
