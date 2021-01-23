@@ -9,13 +9,22 @@ import java.nio.file.Path;
 public class EncryptedFile {
 
 	Cipher cipher;
-	EncryptedFile(Cipher source)
-	{
+
+	EncryptedFile(
+			Cipher source) {
 		cipher = source;
 	}
-	void create() throws IOException{
-		Files.writeString(Path.of("Encrypted.txt"), cipher.encrypt());
-		System.out.println("Encrypted text stored in Encrypted.txt. Here you go!");
-		Desktop.getDesktop().open(new File("Encrypted.txt"));
+
+	void create() throws IOException {
+		Files.writeString(
+				Path.of(
+						"Encrypted.txt"),
+				cipher.encrypt());
+		System.out.println(
+				"Encrypted text stored in Encrypted.txt. Here you go!");
+		Desktop.getDesktop()
+				.open(
+						new File(
+								"Encrypted.txt"));
 	}
 }

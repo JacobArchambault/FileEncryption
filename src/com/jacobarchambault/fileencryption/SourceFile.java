@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class SourceFile implements PrintMedium{
+public class SourceFile implements PrintMedium {
 
 	String filePath;
 
@@ -15,6 +15,8 @@ public class SourceFile implements PrintMedium{
 
 	public String allText() throws IOException {
 		return new String(
-				Files.readAllBytes(Paths.get("MyLetters.txt")));
+				Files.readAllBytes(
+						Paths.get(
+								"MyLetters.txt")));
 	}
 }
