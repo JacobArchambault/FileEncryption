@@ -3,11 +3,16 @@ package com.jacobarchambault.fileencryption;
 import java.util.Scanner;
 
 public class CipherKey {
+	Scanner scanner;
+
+	CipherKey(
+			Scanner scanner) {
+		this.scanner = scanner;
+	}
+
 	int offset() {
 		System.out.print(
 				"Enter an integer offset for your Caesar Cipher and press enter: ");
-		Scanner scanner = new Scanner(
-				System.in);
 		String input = scanner.nextLine();
 		while (!isNumber(
 				input)) {

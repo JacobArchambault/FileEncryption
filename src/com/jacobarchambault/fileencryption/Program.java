@@ -1,6 +1,7 @@
 package com.jacobarchambault.fileencryption;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Program {
 
@@ -11,7 +12,10 @@ public class Program {
 				new CaesarCipher(
 						new GuardedPrintMedium(
 								new SourceFile(
-										"MyLetters.txt")))).create();
+										"MyLetters.txt")),
+						new CipherKey(
+								new Scanner(
+										System.in)))).create();
 
 	}
 }

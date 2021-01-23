@@ -6,10 +6,12 @@ import java.util.Scanner;
 public class CaesarCipher implements Cipher {
 
 	PrintMedium medium;
+	CipherKey cipherKey;
 
 	CaesarCipher(
-			PrintMedium sourceText) {
+			PrintMedium sourceText, CipherKey key) {
 		medium = sourceText;
+		cipherKey = key;
 	}
 
 	private char applyLowerCaseCipher(
@@ -25,7 +27,7 @@ public class CaesarCipher implements Cipher {
 	};
 
 	public String encrypt() throws IOException {
-		int offset = new CipherKey().offset();
+		int offset = cipherKey.offset();
 		System.out.println(
 				"Encrypting file...");
 		StringBuilder builder = new StringBuilder();
