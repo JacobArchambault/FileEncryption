@@ -4,11 +4,11 @@ import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 
-public class EncryptedFile {
+public class Foobar {
 
 	MyFileWriter writer;
 
-	EncryptedFile(
+	Foobar(
 			MyFileWriter writer) {
 		this.writer = writer;
 	}

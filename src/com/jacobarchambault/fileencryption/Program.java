@@ -9,7 +9,7 @@ public class Program {
 	public static void main(
 			String[] args) throws IOException {
 
-		new EncryptedFile(
+		new Foobar(
 				new MyFileWriter(
 						new FileWriter(
 								"Encrypted.txt"),
