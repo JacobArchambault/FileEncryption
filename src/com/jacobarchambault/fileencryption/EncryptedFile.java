@@ -8,19 +8,15 @@ import java.io.IOException;
 public class EncryptedFile {
 
 	Cipher cipher;
-	FileWriter writer;
+	MyFileWriter writer;
 
 	EncryptedFile(
-			Cipher source,
-			FileWriter writer) {
-		cipher = source;
+			MyFileWriter writer) {
 		this.writer = writer;
 	}
 
 	void create() throws IOException {
-		writer.write(
-				cipher.encrypt());
-		writer.close();
+		writer.write();
 		System.out.println(
 				"Encrypted text stored in Encrypted.txt. Here you go!");
 		Desktop.getDesktop()

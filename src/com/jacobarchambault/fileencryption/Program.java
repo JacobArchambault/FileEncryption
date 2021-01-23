@@ -10,17 +10,18 @@ public class Program {
 			String[] args) throws IOException {
 
 		new EncryptedFile(
-				new CaesarCipher(
-						new SourceText(
-								new GuardedPrintMedium(
-										new SourceFile(
-												"MyLetters.txt"))),
-						new CipherKey(
-								new Scanner(
-										System.in)),
-						new StringBuilder()),
-				new FileWriter(
-						"Encrypted.txt")).create();
+				new MyFileWriter(
+						new FileWriter(
+								"Encrypted.txt"),
+						new CaesarCipher(
+								new SourceText(
+										new GuardedPrintMedium(
+												new SourceFile(
+														"MyLetters.txt"))),
+								new CipherKey(
+										new Scanner(
+												System.in)),
+								new StringBuilder()))).create();
 
 	}
 }
