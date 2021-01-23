@@ -3,7 +3,7 @@ package com.jacobarchambault.fileencryption;
 import java.util.Scanner;
 
 public class CipherKey {
-	static int offset() {
+	int offset() {
 		System.out.print(
 				"Enter an integer offset for your Caesar Cipher and press enter: ");
 		Scanner scanner = new Scanner(
@@ -20,6 +20,7 @@ public class CipherKey {
 		scanner.close();
 		return cipherKey;
 	}
+
 	private static boolean isNumber(
 			String input) {
 		try {

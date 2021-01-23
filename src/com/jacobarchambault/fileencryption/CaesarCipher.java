@@ -25,7 +25,7 @@ public class CaesarCipher implements Cipher {
 	};
 
 	public String encrypt() throws IOException {
-		int offset = CipherKey.offset();
+		int offset = new CipherKey().offset();
 		System.out.println(
 				"Encrypting file...");
 		StringBuilder builder = new StringBuilder();
