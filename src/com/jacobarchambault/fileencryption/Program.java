@@ -10,7 +10,7 @@ public class Program {
 			String[] args) throws IOException {
 
 		new Foobar(
-				new MyFileWriter(
+				new EncryptedFile(
 						new FileWriter(
 								"Encrypted.txt"),
 						new EncryptedText(

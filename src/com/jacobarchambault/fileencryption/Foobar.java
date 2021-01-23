@@ -6,10 +6,10 @@ import java.io.IOException;
 
 public class Foobar {
 
-	MyFileWriter writer;
+	EncryptedFile writer;
 
 	Foobar(
-			MyFileWriter writer) {
+			EncryptedFile writer) {
 		this.writer = writer;
 	}
 
