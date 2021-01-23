@@ -26,10 +26,16 @@ public class Program {
 						new StringBuilder())).write();
 		System.out.println(
 				"Encrypted text stored at " + outfilePath + ". Here you go!");
+		openWithDefaultApp(
+				outfilePath);
+
+	}
+
+	private static void openWithDefaultApp(
+			String outfilePath) throws IOException {
 		Desktop.getDesktop()
 				.open(
 						new File(
 								outfilePath));
-
 	}
 }
