@@ -24,18 +24,9 @@ public class Program {
 								new Scanner(
 										System.in)),
 						new StringBuilder())).write();
-		System.out.println(
-				"Encrypted text stored at " + outfilePath + ". Here you go!");
-		openWithDefaultApp(
+		DesktopFile.openWithDefaultApp(
 				outfilePath);
 
 	}
 
-	private static void openWithDefaultApp(
-			String outfilePath) throws IOException {
-		Desktop.getDesktop()
-				.open(
-						new File(
-								outfilePath));
-	}
 }
