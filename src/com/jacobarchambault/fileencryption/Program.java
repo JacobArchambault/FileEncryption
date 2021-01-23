@@ -4,6 +4,7 @@ import java.awt.Desktop;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Program {
@@ -13,7 +14,7 @@ public class Program {
 
 		String outfilePath = "Encrypted.txt";
 		new EncryptedFile(
-				new FileWriter(
+				new PrintWriter(
 						outfilePath),
 				new EncryptedText(
 						new GuardedPrintMedium(
