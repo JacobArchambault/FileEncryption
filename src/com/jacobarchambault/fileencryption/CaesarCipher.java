@@ -4,9 +4,9 @@ import java.io.IOException;
 
 public class CaesarCipher implements Cipher {
 
-	SourceText sourceText;
-	CipherKey cipherKey;
 	StringBuilder builder;
+	CipherKey cipherKey;
+	SourceText sourceText;
 
 	CaesarCipher(
 			SourceText sourceText,
@@ -17,18 +17,7 @@ public class CaesarCipher implements Cipher {
 		this.builder = builder;
 	}
 
-	private char applyLowerCaseCipher(
-			int offset,
-			char character) {
-		return (char) ('a' + ((character - 'a' + offset) % 26));
-	}
-
-	private char applyUpperCaseCipher(
-			int offset,
-			char character) {
-		return (char) ('A' + ((character - 'A' + offset) % 26));
-	};
-
+	@Override
 	public String encrypt() throws IOException {
 		int offset = cipherKey.offset();
 		System.out.println(
@@ -48,6 +37,18 @@ public class CaesarCipher implements Cipher {
 					newCharacter);
 		}
 		return builder.toString();
+	}
+
+	private char applyLowerCaseCipher(
+			int offset,
+			char character) {
+		return (char) ('a' + ((character - 'a' + offset) % 26));
+	};
+
+	private char applyUpperCaseCipher(
+			int offset,
+			char character) {
+		return (char) ('A' + ((character - 'A' + offset) % 26));
 	}
 
 }

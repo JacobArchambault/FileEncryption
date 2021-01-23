@@ -13,6 +13,7 @@ public class SourceFile implements PrintMedium {
 		this.filePath = filePath;
 	}
 
+	@Override
 	public String allText() throws IOException {
 		return new String(
 				Files.readAllBytes(

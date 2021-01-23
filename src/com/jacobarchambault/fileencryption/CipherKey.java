@@ -3,6 +3,17 @@ package com.jacobarchambault.fileencryption;
 import java.util.Scanner;
 
 public class CipherKey {
+	private static boolean isNumber(
+			String input) {
+		try {
+			Integer.parseInt(
+					input);
+			return true;
+		} catch (NumberFormatException ex) {
+			return false;
+		}
+	}
+
 	Scanner scanner;
 
 	CipherKey(
@@ -24,17 +35,6 @@ public class CipherKey {
 				input);
 		scanner.close();
 		return cipherKey;
-	}
-
-	private static boolean isNumber(
-			String input) {
-		try {
-			Integer.parseInt(
-					input);
-			return true;
-		} catch (NumberFormatException ex) {
-			return false;
-		}
 	}
 
 }
