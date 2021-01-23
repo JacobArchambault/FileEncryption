@@ -10,9 +10,10 @@ public class Program {
 
 		new EncryptedFile(
 				new CaesarCipher(
-						new GuardedPrintMedium(
-								new SourceFile(
-										"MyLetters.txt")),
+						new SourceText(
+								new GuardedPrintMedium(
+										new SourceFile(
+												"MyLetters.txt"))),
 						new CipherKey(
 								new Scanner(
 										System.in)),

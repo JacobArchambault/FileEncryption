@@ -4,13 +4,15 @@ import java.io.IOException;
 
 public class CaesarCipher implements Cipher {
 
-	PrintMedium medium;
+	SourceText sourceText;
 	CipherKey cipherKey;
 	StringBuilder builder;
 
 	CaesarCipher(
-			PrintMedium sourceText, CipherKey key, StringBuilder builder) {
-		medium = sourceText;
+			SourceText sourceText,
+			CipherKey key,
+			StringBuilder builder) {
+		this.sourceText = sourceText;
 		cipherKey = key;
 		this.builder = builder;
 	}
@@ -31,7 +33,7 @@ public class CaesarCipher implements Cipher {
 		int offset = cipherKey.offset();
 		System.out.println(
 				"Encrypting file...");
-		char[] charArray = textAsCharArray();
+		char[] charArray = sourceText.asCharArray();
 		for (char character : charArray) {
 			char newCharacter = character == ' ' ? ' '
 					: Character.isUpperCase(
@@ -48,9 +50,4 @@ public class CaesarCipher implements Cipher {
 		return builder.toString();
 	}
 
-	private char[] textAsCharArray() throws IOException {
-		char[] charArray = medium.allText()
-				.toCharArray();
-		return charArray;
-	}
 }
