@@ -18,6 +18,6 @@ public class SourceFile implements PrintMedium {
 		return new String(
 				Files.readAllBytes(
 						Paths.get(
-								"MyLetters.txt")));
+								filePath)));
 	}
 }
