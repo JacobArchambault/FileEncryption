@@ -11,9 +11,10 @@ public class Program {
 	public static void main(
 			String[] args) throws IOException {
 
+		String outfilePath = "Encrypted.txt";
 		new EncryptedFile(
 				new FileWriter(
-						"Encrypted.txt"),
+						outfilePath),
 				new EncryptedText(
 						new GuardedPrintMedium(
 								new SourceFile(
@@ -23,11 +24,11 @@ public class Program {
 										System.in)),
 						new StringBuilder())).write();
 		System.out.println(
-				"Encrypted text stored in Encrypted.txt. Here you go!");
+				"Encrypted text stored at " + outfilePath + ". Here you go!");
 		Desktop.getDesktop()
 				.open(
 						new File(
-								"Encrypted.txt"));
+								outfilePath));
 
 	}
 }
