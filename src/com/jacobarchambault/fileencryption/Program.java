@@ -1,5 +1,6 @@
 package com.jacobarchambault.fileencryption;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -17,7 +18,9 @@ public class Program {
 						new CipherKey(
 								new Scanner(
 										System.in)),
-						new StringBuilder())).create();
+						new StringBuilder()),
+				new FileWriter(
+						"Encrypted.txt")).create();
 
 	}
 }
