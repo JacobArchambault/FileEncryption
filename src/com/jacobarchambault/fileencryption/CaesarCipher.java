@@ -12,6 +12,7 @@ public class CaesarCipher implements Cipher {
 			PrintMedium sourceText, CipherKey key, StringBuilder builder) {
 		medium = sourceText;
 		cipherKey = key;
+		this.builder = builder;
 	}
 
 	private char applyLowerCaseCipher(
