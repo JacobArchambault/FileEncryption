@@ -6,9 +6,10 @@ public class CaesarCipher implements Cipher {
 
 	PrintMedium medium;
 	CipherKey cipherKey;
+	StringBuilder builder;
 
 	CaesarCipher(
-			PrintMedium sourceText, CipherKey key) {
+			PrintMedium sourceText, CipherKey key, StringBuilder builder) {
 		medium = sourceText;
 		cipherKey = key;
 	}
@@ -29,7 +30,6 @@ public class CaesarCipher implements Cipher {
 		int offset = cipherKey.offset();
 		System.out.println(
 				"Encrypting file...");
-		StringBuilder builder = new StringBuilder();
 		char[] charArray = textAsCharArray();
 		for (char character : charArray) {
 			char newCharacter = character == ' ' ? ' '

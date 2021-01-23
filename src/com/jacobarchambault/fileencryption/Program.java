@@ -15,7 +15,8 @@ public class Program {
 										"MyLetters.txt")),
 						new CipherKey(
 								new Scanner(
-										System.in)))).create();
+										System.in)),
+						new StringBuilder())).create();
 
 	}
 }
