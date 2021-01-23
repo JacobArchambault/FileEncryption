@@ -1,13 +1,12 @@
 package com.jacobarchambault.fileencryption;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
 public class EncryptedFile {
 
-	Writer writer;
 	Cipher cipher;
+	Writer writer;
 
 	EncryptedFile(
 			Writer writer,
