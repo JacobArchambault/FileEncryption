@@ -14,10 +14,9 @@ public class Program {
 						new FileWriter(
 								"Encrypted.txt"),
 						new EncryptedText(
-								new SourceText(
-										new GuardedPrintMedium(
-												new SourceFile(
-														"MyLetters.txt"))),
+								new GuardedPrintMedium(
+										new SourceFile(
+												"MyLetters.txt")),
 								new CipherKey(
 										new Scanner(
 												System.in)),

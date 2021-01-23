@@ -6,13 +6,13 @@ public class EncryptedText implements Cipher {
 
 	StringBuilder builder;
 	CipherKey cipherKey;
-	SourceText sourceText;
+	PrintMedium medium;
 
 	EncryptedText(
-			SourceText sourceText,
+			PrintMedium medium,
 			CipherKey key,
 			StringBuilder builder) {
-		this.sourceText = sourceText;
+		this.medium = medium;
 		cipherKey = key;
 		this.builder = builder;
 	}
@@ -22,7 +22,8 @@ public class EncryptedText implements Cipher {
 		int offset = cipherKey.offset();
 		System.out.println(
 				"Encrypting file...");
-		char[] charArray = sourceText.asCharArray();
+		char[] charArray = medium.allText()
+				.toCharArray();
 		for (char character : charArray) {
 			char newCharacter = character == ' ' ? ' '
 					: Character.isUpperCase(
